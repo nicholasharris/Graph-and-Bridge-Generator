@@ -121,9 +121,9 @@ def make_general_graph(n_vertices, density, windy, output_file):
             y_count += 1
             x_count = 0
 
-    print("len points_x: " + str(len(points_x)))
-    print("len points_y: " + str(len(points_x)))
-    print("num_vertices: " + str(n_vertices))
+    #print("len points_x: " + str(len(points_x)))
+    #print("len points_y: " + str(len(points_x)))
+    #print("num_vertices: " + str(n_vertices))
 
     plot_count = 0
     for x in range(n_vertices):
@@ -133,8 +133,8 @@ def make_general_graph(n_vertices, density, windy, output_file):
                 plt.plot([points_x[y], points_x[x]], [points_y[y], points_y[x]], color='b', marker = 'o')
                 plot_count += 1
 
-    print("plot count: " + str(plot_count))
-    print("num_edges: " + str(num_edges))
+    #print("plot count: " + str(plot_count))
+    #print("num_edges: " + str(num_edges))
 
     #plt.show()
     plt.savefig('graph.png')
@@ -144,7 +144,7 @@ def make_general_graph(n_vertices, density, windy, output_file):
 def make_bridge_graph(n_vertices, density, windy, output_file):
 
     if(n_vertices < 18):
-        print("ERROR, Minimum 18 vertices needed to construct graph.")
+        #print("ERROR, Minimum 18 vertices needed to construct graph.")
         return
     random.seed()
 
@@ -166,7 +166,7 @@ def make_bridge_graph(n_vertices, density, windy, output_file):
 
     num_layers = random.randint(3, 4) #number of layers in bridge half
 
-    print("num layers: " + str(num_layers))
+    #print("num layers: " + str(num_layers))
 
     num_extra_nodes = half_size % num_layers
 
@@ -187,7 +187,7 @@ def make_bridge_graph(n_vertices, density, windy, output_file):
 
     num_layers_full = num_layers*2
 
-    print("num layers full: " + str(num_layers_full))
+    #print("num layers full: " + str(num_layers_full))
     layer_sizes_full = []
     for x in range(num_layers):
         layer_sizes_full.append(layer_sizes[x])
@@ -202,12 +202,12 @@ def make_bridge_graph(n_vertices, density, windy, output_file):
     for x in range(num_layers - 1):
         layer_separations_full.append(layer_separations[len(layer_separations) - 1 - x])
 
-    print("num layer separations full: " + str(len(layer_separations_full)))
+    #print("num layer separations full: " + str(len(layer_separations_full)))
 
 
     max_layer_size = max(layer_sizes_full)
 
-    print("max layer size: " + str(max_layer_size))
+    #print("max layer size: " + str(max_layer_size))
 
     #duplicate layers to form full bridge
     full_vertices = []
@@ -297,9 +297,9 @@ def make_bridge_graph(n_vertices, density, windy, output_file):
     points_x = full_xs #x, y coordinates of vertices
     points_y = full_ys
 
-    print("len points_x: " + str(len(points_x)))
-    print("len points_y: " + str(len(points_x)))
-    print("num_vertices: " + str(n_vertices))
+    #print("len points_x: " + str(len(points_x)))
+    #print("len points_y: " + str(len(points_x)))
+    #print("num_vertices: " + str(n_vertices))
 
     plot_count = 0
     for x in range(n_vertices):
@@ -309,8 +309,8 @@ def make_bridge_graph(n_vertices, density, windy, output_file):
                 plt.plot([points_x[y], points_x[x]], [points_y[y], points_y[x]], color='b', marker = 'o')
                 plot_count += 1
 
-    print("plot count: " + str(plot_count))
-    print("num_edges: " + str(num_edges))
+    #print("plot count: " + str(plot_count))
+    #print("num_edges: " + str(num_edges))
 
     #plt.show()
     plt.savefig('graph.png')
